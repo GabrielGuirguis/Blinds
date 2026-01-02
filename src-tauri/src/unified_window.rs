@@ -4,15 +4,12 @@ use serde::{Deserialize, Serialize};
 pub struct UnifiedWindow {
     pub id: String,
     pub name: String,
-    pub app_name: String,
     pub app_id: String,
-    pub is_visible: bool,
-
+    pub is_hidden: bool
 }
 
 impl UnifiedWindow {
-    pub fn new(title: String, width: u32, height: u32) -> Self {
-        Self { title, width, height }
+    pub fn new(id: String, name: String, app_id: String) -> Self {
+        Self { id, name, app_id, is_hidden: false }
     }
 }
-
